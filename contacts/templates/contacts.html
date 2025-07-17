@@ -41,12 +41,12 @@
                         <a class="nav-link {% if request.resolver_match and request.resolver_match.url_name == 'books' %}active{% endif %}"
                             href="{% url 'books' %}">Livres</a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match and request.resolver_match.url_name == 'citations' %}active{% endif %}"
                             href="{% url 'citations' %}">Citations</a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match and request.resolver_match.url_name == 'contacts' %}active{% endif %}"
                             href="{% url 'contacts' %}">Contact</a>
@@ -92,13 +92,73 @@
             </div>
         </div>
     </div>
+
+    <!-- Section Dédicaces -->
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Quelques Dédicaces</h3>
+
+        <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{% static 'images/dedicace.jpg' %}" class="img-fluid dedicace-img rounded shadow"
+                                alt="Dédicace 1">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/imag.jpg' %}" class="img-fluid dedicace-img rounded shadow"
+                                alt="Dédicace 2">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/images.jpg' %}" class="img-fluid dedicace-img rounded shadow"
+                                alt="Dédicace 3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{% static 'images/image8.jpg' %}" class="img-fluid dedicace-img rounded shadow" alt="Dédicace 1">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/img.jpg' %}" class="img-fluid dedicace-img rounded shadow" alt="Dédicace 2">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/ima.jpg' %}" class="img-fluid dedicace-img rounded shadow" alt="Dédicace 3">
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+
+            <!-- Contrôles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#multiCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#multiCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </div>
+    <br> <br>
+
+
+
     <footer class="custom-footer py-3">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <p class="mb-2 mb-md-0">&copy; 2025 Becken De Gnaman-Dies. Tous droits réservés.</p>
             <ul class="list-inline mb-2 mb-md-0">
-                <li class="list-inline-item"><a href="{% url 'home' %}" class="text-white text-decoration-none">Accueil</a>
+                <li class="list-inline-item"><a href="{% url 'home' %}"
+                        class="text-white text-decoration-none">Accueil</a>
                 </li>
-                <li class="list-inline-item"><a href="{% url 'books' %}" class="text-white text-decoration-none">Livres</a>
+                <li class="list-inline-item"><a href="{% url 'books' %}"
+                        class="text-white text-decoration-none">Livres</a>
                 </li>
                 <li class="list-inline-item"><a href="{% url 'citations' %}"
                         class="text-white text-decoration-none">Citations</a></li>
@@ -107,10 +167,11 @@
             </ul>
             <form class="d-flex" style="gap: 8px;" method="POST" action="{% url 'newsletter' %}">
                 {% csrf_token %}
-                <input type="email" name="email" class="form-control form-control-sm" placeholder="Votre email" required>
+                <input type="email" name="email" class="form-control form-control-sm" placeholder="Votre email"
+                    required>
                 <button class="btn btn-warning btn-sm text-dark">S’abonner</button>
             </form>
-            
+
         </div>
     </footer>
 

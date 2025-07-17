@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-!m9tliz1)ebuh49s7@-jpqv&sf-3h267u1=vf85v8)#@%tz5l*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['site-becken-de-gnaman-dies.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'site-becken-de-gnaman-dies.onrender.com']
+
+# ALLOWED_HOSTS = ['site-becken-de-gnaman-dies.onrender.com']
 
 
 
@@ -81,7 +83,6 @@ WSGI_APPLICATION = 'papa_site.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',

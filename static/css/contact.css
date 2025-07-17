@@ -21,3 +21,10 @@ h2 {
 .btn-primary:hover {
     background-color: #143e56;
 }
+
+.dedicace-img {
+    max-height: 350px;
+    object-fit: cover;
+    width: auto;
+}
+
